@@ -29,6 +29,7 @@ const ThingApiService = {
   getThingReviews(thingId) {
     return fetch(`${config.API_ENDPOINT}/things/${thingId}/reviews`, {
       headers: {
+        'Authorization': `basic ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>
